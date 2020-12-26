@@ -7,6 +7,9 @@ $secondary: #66c37c;
 
 //! TODO: ERROR AT MEDIA QUERY: HEIGHT: 590px WIDTH: 345px
 
+//? Not supported devices: Microsoft Lumia 550, JioPhone 2
+// Who the fuck owns some shit like that
+
 body {
    font-family: 'Gordita', sans-serif;
 
@@ -119,6 +122,10 @@ body {
 
    .get {
       text-decoration: none;
+
+      @media (max-width: 310.98px) {
+         display: none;
+      }
    }
 }
 
@@ -353,6 +360,14 @@ header {
          padding-top: 150px;
       }
 
+      @media (max-height: 655.98px) {
+         padding-top: 100px;
+      }
+
+      @media (max-height: 560.98px) {
+         padding-top: 60px;
+      }
+
       .row {
          @media (max-width: 1199.98px) {
             flex-direction: column-reverse;
@@ -375,17 +390,41 @@ header {
                @media (max-width: 497.98px) {
                   font-size: 32px;
                }
+
+               @media (max-width: 341.98px) {
+                  font-size: 22px;
+               }
             }
 
             .button-group {
                padding-top: 5rem;
 
+               @media (max-width: 350.98px) {
+                  display: flex;
+                  flex-direction: column;
+                  padding-top: 2rem;
+
+                  .learn {
+                     margin-top: 10px;
+                  }
+               }
+
                .get {
                   margin-right: 5px;
+
+                  @media (max-width: 575.98px) {
+                     margin-right: 2.5px;
+                     padding: 0.375rem 0.75rem;
+                  }
                }
 
                .learn {
                   margin-left: 5px;
+
+                  @media (max-width: 575.98px) {
+                     margin-left: 2.5px;
+                     padding: 0.375rem 0.75rem;
+                  }
                }
             }
          }
@@ -433,6 +472,11 @@ header {
                background-repeat: no-repeat;
                background-position: 50% 0%;
                background-size: 10rem;
+
+               @media (max-height: 650.98px) {
+                  width: 8rem;
+                  height: 8rem;
+               }
 
                // Just for now
                svg {

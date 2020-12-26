@@ -119,6 +119,12 @@ body.show-sidebar:not(.touch) {
   text-decoration: none;
 }
 
+@media (max-width: 310.98px) {
+  .navbar .get {
+    display: none;
+  }
+}
+
 .menu-toggle svg {
   color: #fff;
   height: 31px;
@@ -354,6 +360,18 @@ header .container {
   }
 }
 
+@media (max-height: 655.98px) {
+  header .container {
+    padding-top: 100px;
+  }
+}
+
+@media (max-height: 560.98px) {
+  header .container {
+    padding-top: 60px;
+  }
+}
+
 @media (max-width: 1199.98px) {
   header .container .row {
     -webkit-box-orient: vertical;
@@ -387,16 +405,52 @@ header .container .row .description .title {
   }
 }
 
+@media (max-width: 341.98px) {
+  header .container .row .description .title {
+    font-size: 22px;
+  }
+}
+
 header .container .row .description .button-group {
   padding-top: 5rem;
+}
+
+@media (max-width: 350.98px) {
+  header .container .row .description .button-group {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    padding-top: 2rem;
+  }
+  header .container .row .description .button-group .learn {
+    margin-top: 10px;
+  }
 }
 
 header .container .row .description .button-group .get {
   margin-right: 5px;
 }
 
+@media (max-width: 575.98px) {
+  header .container .row .description .button-group .get {
+    margin-right: 2.5px;
+    padding: 0.375rem 0.75rem;
+  }
+}
+
 header .container .row .description .button-group .learn {
   margin-left: 5px;
+}
+
+@media (max-width: 575.98px) {
+  header .container .row .description .button-group .learn {
+    margin-left: 2.5px;
+    padding: 0.375rem 0.75rem;
+  }
 }
 
 header .container .row .col-xl-5 .image-wrapper {
@@ -440,6 +494,13 @@ header .container .row .col-xl-5 .mobile-image-wrapper {
   background-repeat: no-repeat;
   background-position: 50% 0%;
   background-size: 10rem;
+}
+
+@media (max-height: 650.98px) {
+  header .container .row .col-xl-5 .mobile-image-wrapper {
+    width: 8rem;
+    height: 8rem;
+  }
 }
 
 header .container .row .col-xl-5 .mobile-image-wrapper svg {
