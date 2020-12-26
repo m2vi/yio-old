@@ -1,7 +1,7 @@
 <?php
-require("../settings/translate/download.php");
 require("../../../lib/OS/array.php");
 require("../../../lib/IP/ip.php");
+require("../settings/translate/download.php");
 
 $OS_round_old = $OS_round;
 
@@ -31,7 +31,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Download</title>
+   <title><?php echo $header->title ?></title>
    <link rel="stylesheet" href="http://localhost/lib/bootstrap-5.0.0-beta1/dist/css/bootstrap.min.css">
    <link rel="stylesheet" href="http://localhost/lib/aos-master/aos.css">
    <link rel="stylesheet" href="./css/main.min.css">
@@ -86,7 +86,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
             if (in_array($OS_round, ['Windows', 'Linux', 'iOS', 'Mac OS', 'Android'])) {
             ?>
                <h4>
-                  Yeeet It Out für<br> <a href="javascript:void(0)"><?php echo $OS_round ?></a> herunterladen:
+                  <?php echo $content->title ?>
                </h4>
             <?php
             }
@@ -115,14 +115,14 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
                <?php
                } else {
                ?>
-                  <p class="ns">Your platform is not supported.</p>
+                  <p class="ns"><?php echo $content->ns ?></p>
                <?php
                }
                ?>
 
             </div>
-            <a href="./table/" class="show_other">Download other versions</a>
-            <a href="http://localhost/yio/" class="return">Return to <span>m2z.org/yio</span></a>
+            <a href="./table/" class="show_other"><?php echo $content->subtext ?></a>
+            <a href="http://localhost/yio/" class="return"><?php echo $content->return ?></a>
          </div>
       </div>
    </section>
@@ -132,13 +132,10 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
 
          if ($OS_round == 'Windows' || $OS_round == 'Linux' || $OS_round == 'Mac OS') {
          ?>
-            <h1>System Requirements</h1>
+            <h1><?php echo $req->title ?></h1>
             <h2>Windows &#8901; Linux &#8901; MacOS</h2>
-            <p>Minimum System Requirements:</p>
+            <p><?php echo $req->min ?>:</p>
             <ul>
-               <li>
-                  OS: Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1
-               </li>
                <li>
                   Processor: Intel Core 2 Quad CPU Q6600 @ 2.40GHz (4 CPUs) / AMD Phenom 9850 Quad-Core Processor (4 CPUs) @ 2.5GHz
                </li>
@@ -155,11 +152,8 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
                   HDD Space: 65GB
                </li>
             </ul>
-            <p>Recommended System Requirements:</p>
+            <p><?php echo $req->recommended ?>:</p>
             <ul>
-               <li>
-                  OS: Windows 8.1 64 Bit, Windows 8 64 Bit, Windows 7 64 Bit Service Pack 1
-               </li>
                <li>
                   Processor: Intel Core i5 3470 @ 3.2GHZ (4 CPUs) / AMD X8 FX-8350 @ 4GHZ (8 CPUs)
                </li>
@@ -179,7 +173,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
          <?php
          } else if ($OS_round == 'iOS') {
          ?>
-            <h1>System Requirements</h1>
+            <h1><?php echo $req->title ?></h1>
             <h2>iOS</h2>
             <ul>
                <li>iOS 8 or higher</li>
@@ -187,7 +181,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
          <?php
          } else if ($OS_round == 'Android') {
          ?>
-            <h1>System Requirements</h1>
+            <h1><?php echo $req->title ?></h1>
             <h2>Android</h2>
             <ul>
                <li>Android version 8 or higher</li>
@@ -195,7 +189,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
          <?php
          } else {
          ?>
-            <p class="text-center text-muted">The are no requirements for your OS.</p>
+            <p class="text-center text-muted"><?php echo $req->ns ?></p>
          <?php
          }
          ?>

@@ -13,6 +13,9 @@
 </head>
 
 <body>
+    <?php
+    require("../../../lib/preload/preload.php");
+    ?>
     <nav class="navbar-expand navbar fixed-top">
         <div class="collapse navbar-collapse">
             <a class="navbar-brand" href="http://localhost">m2z</a>
@@ -33,8 +36,7 @@
             <div class="windows">
                 <h2 data-toggle="collapse" href="#windowscontent" aria-expanded="false">on windows</h2>
                 <div class="collapse" id="windowscontent">
-                    <h3>1. Click the Windows download button in the <a
-                            href="http://localhost/.apps/yio/#download">download section</a> of the YIO main page.</h3>
+                    <h3>1. Click the Windows download button in the <a href="http://localhost/.apps/yio/#download">download section</a> of the YIO main page.</h3>
                     <img src="./win/first.jpg" alt="Download Section Windows" class="img-fluid">
                 </div>
             </div>
@@ -93,16 +95,8 @@
     <script src="http://localhost/lib/jqeury-3.5.1/jquery-3.5.1.min.js"></script>
     <script src="http://localhost/lib/popper/popper.min.js"></script>
     <script src="http://localhost/lib/bootstrap-4.5.3/dist/js/bootstrap.min.js"></script>
-    <script src="https://kit.fontawesome.com/70940a3d37.js" crossorigin="anonymous"></script>
+    <script src="http://localhost/lib/fontawesome-free-5.14.0-web/js/all.min.js"></script>
     <script src="./docs.js"></script>
-
-    <noscript>
-        <style type="text/css">
-            body {
-                display: none !important;
-            }
-        </style>
-    </noscript>
 </body>
 
 </html>

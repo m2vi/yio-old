@@ -1,5 +1,5 @@
 <?php
-$global = parse_ini_file("../settings/global.ini");
+$global = parse_ini_file("./../settings/global.ini");
 
 $email = $global['email'];
 $phone = $global['phone'];
@@ -10,8 +10,8 @@ $path = $global['Path'];
 
 $AcceptLang = explode(",", preg_replace('/ /', "", $global['AcceptedLanguages']));
 
-$en = '../settings/translate/languages/en.ini';
-$de = '../settings/translate/languages/de.ini';
+$en = './../settings/translate/languages/download/en.ini';
+$de = './../settings/translate/languages/download/de.ini';
 
 
 if (isset($_COOKIE['lang'])) {
@@ -29,14 +29,14 @@ if (isset($_COOKIE['lang'])) {
 
     if (in_array($lang, $AcceptLang)) {
         clCookie($lang);
-        if (verifyLang("../lang/settings/settings." . $lang . ".ini")) {
-            $ini = parse_ini_file("../settings/translate/languages/" . $lang . ".ini");
+        if (verifyLang("./../../settings/translate/languages/download/" . $lang . ".ini")) {
+            $ini = parse_ini_file("./../../settings/translate/languages/download/" . $lang . ".ini");
         } else {
-            $ini = parse_ini_file("../settings/translate/languages/en.ini");
+            $ini = parse_ini_file("./../../settings/translate/languages/download/en.ini");
         }
         $htmllang = $lang;
     } else {
-        $ini = parse_ini_file("../settings/translate/languages/en.ini");
+        $ini = parse_ini_file("./../../settings/translate/languages/download/en.ini");
         $htmllang = $lang;
     }
 }
@@ -47,12 +47,46 @@ function clCookie($x)
 
 function verifyLang($x)
 {
-    if (file_exists($x) and strlen(file_get_contents($x)) > "650") {
+    if (file_exists($x) and strlen(file_get_contents($x)) > "50") {
         return 1;
     } else {
         return 0;
     }
 }
+
+class header
+{
+    public $title;
+}
+
+$header = new header();
+$header->title = $ini['title'];
+
+class content
+{
+    public $title;
+    public $subtext;
+    public $return;
+    public $ns;
+}
+
+$content = new content();
+$content->title = str_replace("#?#", '<a href="javascript:void(0)">' . $OS_round  . '</a>', $ini['content-title']);
+$content->subtext = $ini['content-subtext'];
+$content->return = str_replace("#?#", '<span>m2z.org/yio</span>', $ini['content-return']);
+$content->ns = $ini['content-ns'];
+
+class Requirements
+{
+    public $ns;
+}
+
+$req = new Requirements();
+$req->title = $ini['req-title'];
+$req->min = $ini['req-min'];
+$req->recommended = $ini['req-recommended'];
+$req->ns = $ini['req-ns'];
+
 
 class Footer
 {

@@ -7,6 +7,7 @@ $(document).ready(function () {
       $(this).attr("src", "win/second.png");
     }
   );
+  preload.stop(250);
 });
 
 var pf = navigator.platform;
