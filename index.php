@@ -97,18 +97,18 @@ require("./settings/translate/main.php");
       <div class="container">
          <div class="row">
             <div class="description col-xl-7  col-12">
-               <h2 class="title" data-aos="fade-up"><?php echo $header->title ?></h2>
+               <h2 class="title" data-aos="fade-up" data-aos-delay="350"><?php echo $header->title ?></h2>
                <div class="button-group" data-aos="fade-up" data-aos-delay="650">
                   <a href="./download/" class="btn btn-secondary get"><?php echo $header->btn->download ?></a>
                   <a href="./more/" class="btn btn-white learn"><?php echo $header->btn->learn ?> &#10230;</a>
                </div>
             </div>
             <div class="col-xl-5 col-12">
-               <div class="image-wrapper" data-aos="fade-up-left">
+               <div class="image-wrapper" data-aos="fade-up-left" data-aos-delay="350">
                   <img src="./image/header/header-image.png" alt="..." class="grey">
                   <img src="./image/header/header-image.png" alt="...">
                </div>
-               <div class="mobile-image-wrapper" data-aos="fade-up">
+               <div class="mobile-image-wrapper" data-aos="fade-up" data-aos-delay="350">
                   <i class="fas fa-archway"></i>
                </div>
             </div>
