@@ -1,5 +1,5 @@
 <?php
-$global = parse_ini_file("./settings/global.ini");
+$global = parse_ini_file("../settings/global.ini");
 
 $email = $global['email'];
 $phone = $global['phone'];
@@ -10,8 +10,8 @@ $path = $global['Path'];
 
 $AcceptLang = explode(",", preg_replace('/ /', "", $global['AcceptedLanguages']));
 
-$en = './settings/translate/languages/en.ini';
-$de = './settings/translate/languages/de.ini';
+$en = '../settings/translate/languages/en.ini';
+$de = '../settings/translate/languages/de.ini';
 
 
 if (isset($_COOKIE['lang'])) {
@@ -30,13 +30,13 @@ if (isset($_COOKIE['lang'])) {
     if (in_array($lang, $AcceptLang)) {
         clCookie($lang);
         if (verifyLang("./lang/settings/settings." . $lang . ".ini")) {
-            $ini = parse_ini_file("./settings/translate/languages/" . $lang . ".ini");
+            $ini = parse_ini_file("../settings/translate/languages/" . $lang . ".ini");
         } else {
-            $ini = parse_ini_file("./settings/translate/languages/en.ini");
+            $ini = parse_ini_file("../settings/translate/languages/en.ini");
         }
         $htmllang = $lang;
     } else {
-        $ini = parse_ini_file("./settings/translate/languages/en.ini");
+        $ini = parse_ini_file("../settings/translate/languages/en.ini");
         $htmllang = $lang;
     }
 }

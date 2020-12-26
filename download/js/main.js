@@ -13,7 +13,7 @@ $(".info").click(() => {
 
 // After fully loaded
 window.addEventListener("load", () => {
-  preload.stop();
+  preload.stop(150);
   // Insert AOS
   AOS.init({
     offset: 180,
