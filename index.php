@@ -203,7 +203,7 @@ require("./settings/translate/main.php");
                   </div>
                   <div class="col-sm-3 my-sm-0 mt-5">
                      <ul class="list-unstyled">
-                        <li class="mt-0"><a href="http://localhost/privacypolicy"><?php echo $footer->section->two->item->one ?></a></li>
+                        <li class="mt-0"><a href="http://localhost/privacy"><?php echo $footer->section->two->item->one ?></a></li>
                         <li><a href="http://localhost/imprint"><?php echo $footer->section->two->item->two ?></a></li>
                         <li><a href="#"><?php echo $footer->section->two->item->three ?></a></li>
                      </ul>
@@ -261,6 +261,6 @@ require("./settings/translate/main.php");
             Coded by m2v
             Discord: m2v#7180
 
-            Zero can't code ngl
+            Zero can't code C# (me neither)
 
     ~~~~~~~~~~~~~~~~~~-->
