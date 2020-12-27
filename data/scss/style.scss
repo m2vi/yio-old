@@ -1,0 +1,408 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('../../../../lib/fonts/Gordita/Gordita.css');
+
+$primary: rgb(69, 202, 255);
+$secondary: #66c37c;
+
+//! TODO: ERROR AT MEDIA QUERY: HEIGHT: 590px WIDTH: 345px
+
+//? Not supported devices: Microsoft Lumia 550, JioPhone 2
+// Who the fuck owns some shit like that
+
+body {
+    font-family: 'Gordita', sans-serif;
+
+    &:before {
+        position: absolute;
+        content: "";
+        z-index: 1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(#000, .5);
+        opacity: 0;
+        visibility: hidden;
+        transition: .3s all ease-in-out;
+    }
+
+    &.show-sidebar {
+        overflow: hidden !important;
+
+        &:before {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        &:not(.touch) {
+            padding-right: 17px;
+        }
+    }
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-white {
+    transition: 0.3s ease-in-out;
+    font-family: 'Gordita',
+        sans-serif;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 7px 18px;
+    border: none;
+
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.btn-primary {
+    background-color: $primary;
+    color: #fff;
+    border: 2px solid $primary;
+
+    &:hover {
+
+        background-color: #fff;
+        color: $primary;
+        border-color: $primary;
+    }
+
+    &:focus {
+        border: 2px solid $primary;
+    }
+}
+
+.btn-secondary {
+    background-color: $secondary;
+    color: #fff;
+
+    &:hover {
+        color: $secondary;
+        background-color: #fff;
+    }
+}
+
+.btn-white {
+    background-color: #fff;
+
+    &:hover {
+        background-color: rgb(226, 207, 207);
+    }
+}
+
+.navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    color: #fff;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    // padding: 0.5rem 2rem !important;
+    transition: 0.5s;
+    background-color: transparent;
+    min-height: 60px;
+
+    @media (max-width: 575.98px) {
+        .container {
+            margin-right: 12px;
+            margin-left: 12px;
+        }
+    }
+
+    .menu-toggle {
+        height: 31px;
+        width: 31px;
+        padding-top: 4px;
+    }
+
+    .get {
+        text-decoration: none;
+
+        @media (max-width: 310.98px) {
+            display: none;
+        }
+    }
+}
+
+.menu-toggle svg {
+    color: #fff;
+    height: 31px;
+    width: 31px;
+}
+
+aside {
+    height: 100vh;
+    min-height: 580px;
+    width: 300px;
+    left: 0;
+    z-index: 1001;
+    position: fixed;
+    transform: translateX(-100%);
+    background-color: #fff;
+    transition: .5s transform cubic-bezier(.23, 1, .32, 1);
+
+    @media (max-width: 575.98px) {
+        width: 100%;
+    }
+
+    .show-sidebar & {
+        transform: translateX(0%);
+    }
+
+    .show-sidebar & {
+        box-shadow: 10px 0 30px 0 rgba(#000, .1);
+    }
+
+    .side-inner {
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        padding: 50px 0;
+        height: 100vh;
+        overflow-y: scroll;
+        -webkit-overflow-scrolling: touch;
+
+        @media (max-height: 580px) {
+            padding-bottom: 0;
+        }
+
+        .close {
+            position: absolute;
+            top: 2.5px;
+            left: 2.5px;
+
+            @media (max-width: 575.98px) {
+                top: 2.5px;
+                right: 2.5px;
+                left: auto;
+            }
+
+            svg {
+                color: #8b8b8b;
+            }
+        }
+
+        .details {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #efefef;
+
+            .image {
+                height: 7rem;
+                width: 7rem;
+                margin: 0 auto 20px auto;
+                border-radius: 50%;
+                background-image: url(../../image/header/header-image.png);
+                background-repeat: no-repeat;
+                background-position: 50% 0%;
+                background-size: 7rem;
+            }
+
+            .app-name {
+                font-size: 18px;
+                margin-bottom: 0;
+            }
+
+            .credits {
+                font-size: 14px;
+                font-style: italic;
+                color: #cfcfcf;
+            }
+
+            .btn {
+                margin-top: 2rem;
+            }
+        }
+
+        .nav-menu {
+
+            ul {
+
+                &,
+                li {
+                    padding: 0;
+                    margin: 0px;
+                    list-style: none;
+                }
+
+                li {
+                    a {
+                        text-decoration: none;
+                        display: block;
+                        padding: 10px 30px;
+                        color: #8b8b8b;
+                        position: relative;
+                        transition: .3s padding-left ease;
+
+                        &:active,
+                        &:focus,
+                        &:hover {
+                            outline: none;
+                        }
+
+                        &:hover {
+                            background: lighten(#efefef, 5%);
+                            color: #8b8b8b;
+
+                            &:before {
+                                width: 4px;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            background: lighten(#efefef, 5%);
+                            color: rgb(75, 204, 255);
+                        }
+                    }
+                }
+            }
+
+            ul.language {
+                width: 100%;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+
+                @media (max-height: 580px) {
+                    position: static;
+                }
+
+                .accordion-button {
+                    background-color: #fff;
+                    border-radius: 0;
+                    color: #8b8b8b;
+
+                    &:not(.collapsed) {
+                        color: rgb(75, 204, 255);
+                        background-color: #fff;
+
+                        &:after {
+                            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234BCCFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+                        }
+                    }
+
+                    &:focus {
+                        border-color: rgba(0, 0, 0, 0.125);
+                        box-shadow: none;
+                    }
+                }
+
+                .accordion-body {
+                    padding: 0;
+
+                    ul {
+                        padding-top: .75rem;
+                        padding-bottom: .75rem;
+                        background-color: #fff;
+
+                        li.selected a {
+                            color: rgb(75, 204, 255);
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+
+    .sl-flag {
+        display: inline-block;
+        box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4);
+        width: 15px;
+        height: 15px;
+        background: #aaa;
+        background-position: 50% !important;
+        background-repeat: no-repeat !important;
+        background-size: cover !important;
+        border-radius: 50%;
+        position: relative;
+        top: 2px;
+        overflow: hidden;
+    }
+
+    .flag-de {
+        background: url("../image/flags/de.png");
+    }
+
+    .flag-en {
+        background: url("../image/flags/en.png");
+    }
+}
+
+.container-fluid {
+
+    footer {
+        transition: 300ms ease-in-out;
+        color: #caced1 !important;
+
+        a {
+            color: #caced1;
+            text-decoration: none;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        p {
+            font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+        }
+
+        h3 {
+            font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important;
+        }
+
+        .color-text {
+            color: #757575 !important;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            font-size: 24px;
+            transition: 0.4s ease;
+        }
+
+        .row-1 {
+            background-color: #1C6785;
+        }
+
+        .row-2 {
+            background-color: #187094;
+        }
+
+        .social {
+            font-size: 1rem;
+
+            a {
+                text-decoration: none;
+                color: #caced1;
+                letter-spacing: 8px;
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}

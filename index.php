@@ -220,11 +220,9 @@ require("./settings/translate/main.php");
          </div>
          <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
             <div class="col-12">
-               <div class="row my-4 row-1 no-gutters">
-                  <div class="col-sm-3 col-auto text-center"><small>&#169; M2Z</small></div>
-                  <div class="col-md-3 col-auto"></div>
-                  <div class="col-md-3 col-auto"></div>
-                  <div class="col my-auto text-right social">
+               <div class="row my-4 row-1 no-gutter justify-content-between">
+                  <div class="col-3 col-auto text-center"><small>&#169; M2Z</small></div>
+                  <div class="col-sm-3 col-9 text-right social">
                      <a href="#">
                         <i class="fab fa-github"></i>
                      </a>
