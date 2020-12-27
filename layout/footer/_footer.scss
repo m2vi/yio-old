@@ -1,0 +1,61 @@
+.container-fluid {
+
+    footer {
+        transition: 300ms ease-in-out;
+        color: #caced1 !important;
+
+        a {
+            color: #caced1;
+            text-decoration: none;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        p {
+            font-size: calc(12px + (14 - 12) * ((100vw - 360px) / (1600 - 360))) !important;
+        }
+
+        h3 {
+            font-size: calc(24px + (30 - 24) * ((100vw - 360px) / (1600 - 360))) !important;
+        }
+
+        .color-text {
+            color: #757575 !important;
+        }
+
+        li {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            font-size: 24px;
+            transition: 0.4s ease;
+        }
+
+        .row-1 {
+            background-color: #1C6785;
+        }
+
+        .row-2 {
+            background-color: #187094;
+        }
+
+        .social {
+            font-size: 1rem;
+
+            a {
+                text-decoration: none;
+                color: #caced1;
+                letter-spacing: 8px;
+                font-size: 1.2rem;
+
+                &:hover {
+                    color: $secondary;
+                }
+            }
+        }
+    }
+}
