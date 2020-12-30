@@ -1,15 +1,63 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap')
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap')
-@import url('../../../../lib/fonts/Gordita/Gordita.css')
-
 $primary: rgb(69, 202, 255)
 $secondary: #66c37c
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap")
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap")
+@import url("../../../../lib/fonts/Gordita/Gordita.css")
+
+@import "../../layout/navbar/navbar"
+@import "../../layout/footer/footer"
 
 body
    font-family: 'Gordita', sans-serif
 
+.btn-primary,
+.btn-secondary,
+.btn-white
+   transition: 0.3s ease-in-out
+   font-family: 'Gordita', sans-serif
+   font-weight: 500
+   border-radius: 3px
+   padding: 7px 18px
+   border: none
+
+   &:focus
+      border: none
+      box-shadow: none
+
+.btn-primary
+   background-color: $primary
+   color: #fff
+   border: 2px solid $primary
+
+   &:hover
+
+      background-color: #fff
+      color: $primary
+      border-color: $primary
+
+   &:focus
+      border: 2px solid $primary
+
+.btn-secondary
+   background-color: $secondary
+   color: #fff
+
+   &:hover
+      color: $secondary
+      background-color: #fff
+
+.btn-white
+   background-color: #fff
+
+   &:hover
+      background-color: rgb(226, 207, 207)
+
 a
    text-decoration: none
+
+.menu-toggle svg
+   color: #333
 
 .navbar
    background-color: #fff

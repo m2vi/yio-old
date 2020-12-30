@@ -1,7 +1,10 @@
 <?php
 require("../../../lib/OS/array.php");
 require("../../../lib/IP/ip.php");
-require("../settings/translate/download.php");
+$pathtosettings = "..";
+$part = "download";
+$uselayout = 1;
+require("../settings/translate/manage.php");
 
 $OS_round_old = $OS_round;
 
@@ -40,7 +43,9 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
 <body>
    <?php
    require("../../../lib/preload/preload.php");
+   require("../layout/navbar/navbar.php");
    ?>
+   <div style="height: 60px;"></div>
    <section class="download">
       <nav class="navbar">
          <ul id="touch">
@@ -196,66 +201,9 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
          ?>
       </div>
    </section>
-   <div class="container-fluid pb-0 mb-0 justify-content-center text-light ">
-      <footer>
-         <div class="row justify-content-center mb-0 pt-5 pb-0 row-2 px-3">
-            <div class="col-12">
-               <div class="row row-2">
-                  <div class="col-sm-3 text-md-center brand">
-                     <a href="http://localhost/about"><span> <i class="fas fa-archway"></i></span> <b> M2Z</b></a>
-                  </div>
-                  <div class="col-sm-3 my-sm-0 mt-5">
-                     <ul class="list-unstyled">
-                        <li class="mt-0"><a href="#"><?php echo $footer->section->one->item->one ?></a></li>
-                        <li><a href="#"><a href="#"><?php echo $footer->section->one->item->two ?></a></a></li>
-                        <li><a href="#"><?php echo $footer->section->one->item->three ?></a></li>
-                     </ul>
-                  </div>
-                  <div class="col-sm-3 my-sm-0 mt-5">
-                     <ul class="list-unstyled">
-                        <li class="mt-0"><a href="http://localhost/privacypolicy"><?php echo $footer->section->two->item->one ?></a></li>
-                        <li><a href="http://localhost/imprint"><?php echo $footer->section->two->item->two ?></a></li>
-                        <li><a href="#"><?php echo $footer->section->two->item->three ?></a></li>
-                     </ul>
-                  </div>
-                  <div class="col-sm-3 my-sm-0 mt-5">
-                     <ul class="list-unstyled">
-                        <li class="mt-0"><?php echo $footer->section->three->item->one ?>: <?php echo $ip ?></li>
-                        <li><?php echo $footer->section->three->item->two ?>: <?php echo $OS_round_old ?></li>
-                        <li><?php echo $footer->section->three->item->three ?>: <?php echo $user_browser ?></li>
-                     </ul>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="row justify-content-center mt-0 pt-0 row-1 mb-0 px-sm-3 px-2">
-            <div class="col-12">
-               <div class="row my-4 row-1 no-gutters">
-                  <div class="col-sm-3 col-auto text-center"><small>&#169; M2Z</small></div>
-                  <div class="col-md-3 col-auto"></div>
-                  <div class="col-md-3 col-auto"></div>
-                  <div class="col my-auto text-right social">
-                     <a href="#">
-                        <i class="fab fa-github"></i>
-                     </a>
-                     <a href="#">
-                        <i class="fab fa-patreon"></i>
-                     </a>
-                     <a href="#">
-                        <i class="fab fa-youtube"></i>
-                     </a>
-                     <a href="#">
-                        <i class="fab fa-twitter"></i>
-                     </a>
-                     <a href="#">
-                        <i class="fab fa-instagram"></i>
-                     </a>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </footer>
-   </div>
+   <?php
+   require("../layout/footer/footer.php");
+   ?>
    <script src="http://localhost/lib/fontawesome-free-5.14.0-web/js/all.min.js"></script>
    <script src="http://localhost/lib/aos-master/aos.js"></script>
    <script src="http://localhost/lib/jqeury-3.5.1/jquery-3.5.1.min.js"></script>

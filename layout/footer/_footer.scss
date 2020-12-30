@@ -11,6 +11,12 @@
             &:hover {
                 color: $secondary;
             }
+
+
+            &.active {
+                text-decoration: underline;
+                color: $secondary;
+            }
         }
 
         p {

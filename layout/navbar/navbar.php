@@ -15,14 +15,14 @@
 
         <div class="nav-menu">
             <ul>
-                <li class="active"><a href="javascript:void(0)"><?php echo $sidenav->menu->one ?></a></li>
-                <li><a href="./more/"><?php echo $sidenav->menu->two ?></a></li>
-                <li><a href="./docs/"><?php echo $sidenav->menu->three ?></a></li>
-                <li><a href="./more/#faq"><?php echo $sidenav->menu->four ?></a></li>
+                <li><a href="http://localhost/.apps/yio/"><?php echo $sidenav->menu->one ?></a></li>
+                <li><a href="http://localhost/.apps/yio/more/"><?php echo $sidenav->menu->two ?></a></li>
+                <li><a href="http://localhost/.apps/yio/docs/"><?php echo $sidenav->menu->three ?></a></li>
+                <li><a href="http://localhost/.apps/yio/more/#faq"><?php echo $sidenav->menu->four ?></a></li>
                 <li><a href="http://localhost/contact"><?php echo $sidenav->menu->five ?></a></li>
 
                 <li class="pt-5"><a href="http://localhost/hub/"><?php echo $sidenav->menu->six ?></a></li>
-                <li><a href="./admin/"><?php echo $sidenav->menu->seven ?></a></li>
+                <li><a href="http://localhost/.apps/yio/admin/"><?php echo $sidenav->menu->seven ?></a></li>
 
             </ul>
             <ul class="language">
@@ -67,7 +67,7 @@
                     <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                 </svg>
             </a>
-            <a href="./download/" class="btn btn-secondary get"><?php echo $nav->btn ?></a>
+            <a href="http://localhost/.apps/yio/download/" class="btn btn-secondary get"><?php echo $nav->btn ?></a>
         </div>
     </div>
 </nav>
