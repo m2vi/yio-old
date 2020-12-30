@@ -36,6 +36,7 @@ if (!empty($_POST) and isset($_POST['user']) and !empty($_POST['user']) and isse
       $_SESSION["user"] = $user;
       $_SESSION['last'] = $profile['last'];
       $_SESSION['firstname'] = $profile['firstname'];
+      $_SESSION['mail'] = $profile['mail'];
       $_SESSION['root'] = intval($profile['root']);
       $date = date("j.n.Y g:i:s");
       $stmt = $pdo->prepare("UPDATE `profiles` SET `last` = :lastlogin WHERE `user` = :user");
@@ -106,12 +107,10 @@ if ($ip != $localhost and isset($ipapi)) {
 <html lang="de-DE">
 <?php
 
-if (isset($_SESSION["access"])) {
-   if ($_SESSION["access"] == "okay") {
-      require("./layout/admin.php");
-   } else {
-      require("./login/login.php");
-   }
+if (isset($_SESSION["access"]) and $_SESSION["access"] == "okay" and !isset($_GET['mail'])) {
+   require("./layout/admin.php");
+} else if (isset($_GET['mail'])) {
+   require("./mail/index.php");
 } else {
    require("./login/login.php");
 }

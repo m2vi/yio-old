@@ -134,6 +134,6 @@ $OS_round_old = $OS_round;
             Coded by m2v
             Discord: m2v#7180
 
-            Zero can't code C# (me neither)
+            Zero can't code (only cmd and vbs)
 
     ~~~~~~~~~~~~~~~~~~-->

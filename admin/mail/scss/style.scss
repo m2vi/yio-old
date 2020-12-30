@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+$primary: rgb(69, 202, 255);
+$secondary: #66c37c;
+
+* {
+    margin: 0;
+}
+
+body {
+    background: $primary;
+    background: linear-gradient(132deg, $primary 0%, rgba(0, 170, 238, 1) 100%);
+    font-family: "Roboto", sans-serif;
+    font-weight: 300;
+    min-height: 100vh;
+}
+
+.login-page {
+    width: 420px;
+    padding: 8% 0 0;
+    margin: auto;
+}
+
+@media (max-width: 767.98px) {
+    .login-page {
+        width: 95%;
+    }
+}
+
+.form {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    max-width: 420px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175);
+
+    @media (max-width: 400.98px) {
+        padding: 20px;
+    }
+
+    input {
+        font-family: "Roboto", sans-serif;
+        outline: 0;
+        background: #f2f2f2;
+        width: 100%;
+        border: 0;
+        /* margin: 0 0 15px; */
+        padding: 15px;
+        box-sizing: border-box;
+        font-size: 14px;
+        margin: 3px 0 15px;
+
+        &:disabled {
+            opacity: 0.5;
+        }
+
+        &.username {
+            margin: 25px 0 3px;
+        }
+    }
+
+    p {
+        margin: 15px 5px;
+
+        a {
+            color: rgb(69, 202, 255);
+            text-decoration: none;
+            transition: 0.2s ease;
+
+            &:hover {
+                color: rgba(0, 170, 238, 1);
+            }
+        }
+    }
+
+    button {
+        font-family: "Roboto",
+            sans-serif;
+        text-transform: uppercase;
+        outline: 0;
+        background: $primary;
+        width: 100%;
+        border: 0;
+        padding: 15px;
+        color: #fff;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgb(137, 222, 255);
+        }
+    }
+
+    .message {
+        margin: 1rem 0 0;
+        color: #b3b3b3;
+        font-size: 12px;
+
+        a {
+            color: $secondary;
+            text-decoration: none;
+        }
+    }
+
+    hr {
+        background-color: #ddd;
+        border: 0;
+        height: 1px;
+        margin: 1rem 0;
+    }
+
+    .error {
+        color: rgb(214, 0, 0);
+        font-size: 14px;
+        display: inline-block;
+        position: relative;
+
+        .code {
+            font-weight: bold;
+        }
+    }
+}

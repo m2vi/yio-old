@@ -1,3 +1,9 @@
+@font-face {
+    font-family: 'Gordita';
+    src: url('http://localhost/lib/fonts/Plain/Plain-Bold.woff');
+    font-weight: bold;
+}
+
 body {
     &:before {
         position: absolute;
@@ -49,19 +55,46 @@ body {
         }
     }
 
-    .menu-toggle {
-        height: 31px;
-        width: 31px;
-        padding-top: 4px;
-    }
+    .nav-wrapper {
+        position: relative;
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
 
-    .get {
-        text-decoration: none;
+        .menu-toggle {
+            height: 31px;
+            width: 31px;
+            padding-top: 4px;
+        }
 
-        @media (max-width: 310.98px) {
-            display: none;
+        .logo {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Plain', sans-serif;
+            font-weight: bold;
+            text-decoration: none;
+            color: #fff;
+            font-size: 26px;
+            text-align: center;
+            align-items: center;
+            display: flex;
+            // height: 38px;
+            // width: 38px;
+            // background-image: url("http://localhost/.apps/yio/image/logo/transparent.png");
+            // background-size: 38px;
+        }
+
+        .get {
+            text-decoration: none;
+
+            @media (max-width: 310.98px) {
+                display: none;
+            }
         }
     }
+
 }
 
 .menu-toggle svg {

@@ -1,6 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
 @import url("../../../lib/fonts/Gordita/Gordita.css");
+@font-face {
+  font-family: 'Gordita';
+  src: url("http://localhost/lib/fonts/Plain/Plain-Bold.woff");
+  font-weight: bold;
+}
+
 body:before {
   position: absolute;
   content: "";
@@ -52,18 +58,49 @@ body.show-sidebar:not(.touch) {
   }
 }
 
-.navbar .menu-toggle {
+.navbar .nav-wrapper {
+  position: relative;
+  padding: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.navbar .nav-wrapper .menu-toggle {
   height: 31px;
   width: 31px;
   padding-top: 4px;
 }
 
-.navbar .get {
+.navbar .nav-wrapper .logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-family: 'Plain', sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  font-size: 26px;
+  text-align: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.navbar .nav-wrapper .get {
   text-decoration: none;
 }
 
 @media (max-width: 310.98px) {
-  .navbar .get {
+  .navbar .nav-wrapper .get {
     display: none;
   }
 }

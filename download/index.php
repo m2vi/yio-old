@@ -43,9 +43,7 @@ if (isset($_GET['t']) and !empty($_GET['t'])) {
 <body>
    <?php
    require("../../../lib/preload/preload.php");
-   require("../layout/navbar/navbar.php");
    ?>
-   <div style="height: 60px;"></div>
    <section class="download">
       <nav class="navbar">
          <ul id="touch">
