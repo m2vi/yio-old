@@ -2,10 +2,6 @@
 
 // m2v@root
 // J$`>Q36AT5hd
-
-// if (isset($_GET['ORXWWZLO'])) {
-
-
 require("../../../database/connections/comeg.php");
 $sth = $pdo->prepare("SELECT * FROM `comeg`");
 $sth->execute();
@@ -17,7 +13,7 @@ session_start();
 if (isset($_POST['user']) and empty($_POST['user']) or isset($_POST['input']) and empty($_POST['input'])) {
    header('Location: ../admin/?code=411');
 }
-if (!empty($_POST) and isset($_POST['user']) and !empty($_POST['user']) and isset($_POST['input']) and !empty($_POST['input'])) {
+if (!empty($_POST) and isset($_POST['user']) and !empty($_POST['user']) and isset($_POST['input']) and !empty($_POST['input']) and !isset($_POST['mail'])) {
 
    $user = strtolower($_POST['user']);
    $pass = $_POST['input'];
@@ -37,7 +33,12 @@ if (!empty($_POST) and isset($_POST['user']) and !empty($_POST['user']) and isse
       $_SESSION['last'] = $profile['last'];
       $_SESSION['firstname'] = $profile['firstname'];
       $_SESSION['mail'] = $profile['mail'];
-      $_SESSION['root'] = intval($profile['root']);
+      $_SESSION['root'] = $profile['root'];
+      if ($_SESSION['root'] == "1" or $_SESSION['mail'] == "1") {
+         $_SESSION['mail_access'] = "okay";
+      } else {
+         $_SESSION['mail_access'] = "0";
+      }
       $date = date("j.n.Y g:i:s");
       $stmt = $pdo->prepare("UPDATE `profiles` SET `last` = :lastlogin WHERE `user` = :user");
       $stmt->bindParam(':lastlogin', $date, PDO::PARAM_STR);
@@ -118,7 +119,3 @@ if (isset($_SESSION["access"]) and $_SESSION["access"] == "okay" and !isset($_GE
 ?>
 
 </html>
-
-<!-- } else {
-    http_response_code(403);
-}  -->
