@@ -68,7 +68,7 @@ body {
 }
 
 header {
-   overflow-x: hidden;
+   overflow: hidden;
    position: relative;
    background: $primary;
    background: linear-gradient(132deg, rgba(69, 202, 255, 1) 0%, rgba(0, 170, 238, 1) 100%);
@@ -225,6 +225,10 @@ header {
 
       // svg min height 21px
       @media (max-width: 575.98px) {
+         display: none !important;
+      }
+
+      @media (max-height: 575.98px) {
          display: none !important;
       }
 

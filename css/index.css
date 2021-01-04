@@ -447,7 +447,7 @@ body {
 }
 
 header {
-  overflow-x: hidden;
+  overflow: hidden;
   position: relative;
   background: #45caff;
   background: linear-gradient(132deg, #45caff 0%, #00aaee 100%);
@@ -632,6 +632,12 @@ header .divider {
 }
 
 @media (max-width: 575.98px) {
+  header .divider {
+    display: none !important;
+  }
+}
+
+@media (max-height: 575.98px) {
   header .divider {
     display: none !important;
   }
