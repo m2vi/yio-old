@@ -39,7 +39,7 @@ $OS_round_old = $OS_round;
 
          <div class="nav-menu">
             <ul>
-               <li><a href="http://localhost/.apps/yio/"><?php echo $sidenav->menu->one ?></a></li>
+               <li class="active"><a href="http://localhost/.apps/yio/"><?php echo $sidenav->menu->one ?></a></li>
                <li><a href="http://localhost/.apps/yio/more/"><?php echo $sidenav->menu->two ?></a></li>
                <li><a href="http://localhost/.apps/yio/docs/"><?php echo $sidenav->menu->three ?></a></li>
                <li><a href="http://localhost/.apps/yio/more/#faq"><?php echo $sidenav->menu->four ?></a></li>
@@ -203,8 +203,7 @@ $OS_round_old = $OS_round;
        ~(˘▾˘~)
 
             Coded by m2v
-            Discord: m2v#7180
 
-            Zero can't code (only cmd and vbs)
+            Zero can code, but he is a waste of time
 
     ~~~~~~~~~~~~~~~~~~-->

@@ -120,7 +120,7 @@ aside {
   position: fixed;
   -webkit-transform: translateX(-100%);
           transform: translateX(-100%);
-  background-color: #fff;
+  background-color: var(--aside-background);
   -webkit-transition: 0.5s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
   transition: 0.5s -webkit-transform cubic-bezier(0.23, 1, 0.32, 1);
   transition: 0.5s transform cubic-bezier(0.23, 1, 0.32, 1);
@@ -184,7 +184,7 @@ aside .side-inner .details {
   text-align: center;
   margin-bottom: 30px;
   padding-bottom: 30px;
-  border-bottom: 1px solid #efefef;
+  border-bottom: 1px solid var(--aside-border);
 }
 
 aside .side-inner .details .image {
@@ -213,6 +213,10 @@ aside .side-inner .details .btn {
   margin-top: 2rem;
 }
 
+aside .side-inner .details .btn:hover {
+  background-color: var(--aside-background);
+}
+
 aside .side-inner .nav-menu ul,
 aside .side-inner .nav-menu ul li {
   padding: 0;
@@ -235,7 +239,7 @@ aside .side-inner .nav-menu ul li a:active, aside .side-inner .nav-menu ul li a:
 }
 
 aside .side-inner .nav-menu ul li a:hover {
-  background: #fcfcfc;
+  background: var(--aside-item-active);
   color: #8b8b8b;
 }
 
@@ -246,8 +250,8 @@ aside .side-inner .nav-menu ul li a:hover:before {
 }
 
 aside .side-inner .nav-menu ul li.active a {
-  background: #fcfcfc;
-  color: #4bccff;
+  background: var(--aside-item-active);
+  color: var(--main-color);
 }
 
 aside .side-inner .nav-menu ul.language {
@@ -264,18 +268,18 @@ aside .side-inner .nav-menu ul.language {
 }
 
 aside .side-inner .nav-menu ul.language .accordion-button {
-  background-color: #fff;
+  background-color: var(--aside-background);
   border-radius: 0;
   color: #8b8b8b;
 }
 
 aside .side-inner .nav-menu ul.language .accordion-button:not(.collapsed) {
-  color: #4bccff;
-  background-color: #fff;
+  color: var(--main-color);
+  background-color: var(--aside-background);
 }
 
 aside .side-inner .nav-menu ul.language .accordion-button:not(.collapsed):after {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%234BCCFF'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  background-image: var(--aside-accordion-button);
 }
 
 aside .side-inner .nav-menu ul.language .accordion-button:focus {
@@ -291,11 +295,11 @@ aside .side-inner .nav-menu ul.language .accordion-body {
 aside .side-inner .nav-menu ul.language .accordion-body ul {
   padding-top: .75rem;
   padding-bottom: .75rem;
-  background-color: #fff;
+  background-color: var(--aside-background);
 }
 
 aside .side-inner .nav-menu ul.language .accordion-body ul li.selected a {
-  color: #4bccff;
+  color: var(--aside-background);
 }
 
 aside .sl-flag {
@@ -334,12 +338,12 @@ aside .flag-en {
 }
 
 .container-fluid footer a:hover {
-  color: #66c37c;
+  color: var(--secondary-color);
 }
 
 .container-fluid footer a.active {
   text-decoration: underline;
-  color: #66c37c;
+  color: var(--secondary-color);
 }
 
 .container-fluid footer p {
@@ -366,11 +370,11 @@ aside .flag-en {
 }
 
 .container-fluid footer .row-1 {
-  background-color: #1C6785;
+  background-color: var(--main-color-dark);
 }
 
 .container-fluid footer .row-2 {
-  background-color: #187094;
+  background-color: var(--main-color-deep);
 }
 
 .container-fluid footer .social {
@@ -385,7 +389,7 @@ aside .flag-en {
 }
 
 .container-fluid footer .social a:hover {
-  color: #66c37c;
+  color: var(--secondary-color);
 }
 
 body {

@@ -9,13 +9,13 @@
             text-decoration: none;
 
             &:hover {
-                color: $secondary;
+                color: var(--secondary-color);
             }
 
 
             &.active {
                 text-decoration: underline;
-                color: $secondary;
+                color: var(--secondary-color);
             }
         }
 
@@ -42,11 +42,11 @@
         }
 
         .row-1 {
-            background-color: #1C6785;
+            background-color: var(--main-color-dark);
         }
 
         .row-2 {
-            background-color: #187094;
+            background-color: var(--main-color-deep);
         }
 
         .social {
@@ -59,7 +59,7 @@
                 font-size: 1.2rem;
 
                 &:hover {
-                    color: $secondary;
+                    color: var(--secondary-color);
                 }
             }
         }
