@@ -1,10 +1,10 @@
 <?php
 require("../../../lib/OS/array.php");
 require("../../../lib/IP/ip.php");
-$pathtosettings = "..";
-$part = "download";
+$pathtosettings = "../../..";
+$part = "yio/download";
 $uselayout = 1;
-require("../settings/translate/manage.php");
+require("../../../settings/translate/manage.php");
 
 $OS_round_old = $OS_round;
 

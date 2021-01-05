@@ -19,19 +19,12 @@
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --main-color: #d94f70;
-        --main-color-deeper: #a02f4b;
-        --main-color-deep: #a01d42;
-        --main-color-dark: #8b0b32;
+        --main-color: rgb(69, 202, 255);
+        --main-color-deeper: rgba(0, 170, 238, 1);
+        --main-color-deep: #187094;
+        --main-color-dark: #1C6785;
 
-        --secondary-color: #d94f70;
-
-        // --main-color: rgb(0, 183, 255);
-        // --main-color-deeper: rgba(0, 170, 238, 1);
-        // --main-color-deep: #187094;
-        // --main-color-dark: #1C6785;
-
-        // --secondary-color: #66c37c;
+        --secondary-color: #66c37c;
 
         --font: #fff;
         --font-dark: #ccc;
