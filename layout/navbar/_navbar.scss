@@ -28,7 +28,7 @@ body {
         }
 
         &:not(.touch) {
-            padding-right: 17px;
+            padding-right: var(--navbar-width);
         }
     }
 }
@@ -183,7 +183,7 @@ aside {
             .credits {
                 font-size: 14px;
                 font-style: italic;
-                color: #cfcfcf;
+                color: var(--font-dark);
             }
 
             .btn {
@@ -256,6 +256,9 @@ aside {
                 .accordion-button {
                     background-color: var(--aside-background);
                     border-radius: 0;
+                    border-color: var(--aside-border);
+                    border-right: 0;
+                    border-left: 0;
                     color: #8b8b8b;
 
                     &:not(.collapsed) {
@@ -267,8 +270,11 @@ aside {
                         }
                     }
 
+                    &:after {
+                        background-image: var(--aside-accordion-button);
+                    }
+
                     &:focus {
-                        border-color: rgba(0, 0, 0, 0.125);
                         box-shadow: none;
                     }
                 }
@@ -277,13 +283,17 @@ aside {
                     padding: 0;
 
                     ul {
-                        padding-top: .75rem;
-                        padding-bottom: .75rem;
                         background-color: var(--aside-background);
 
-                        li.selected a {
-                            color: var(--aside-background);
+                        li {
+                            a {
+                                padding: 15px 30px;
+                            }
 
+                            &.selected a {
+                                color: var(--main-color);
+                                background-color: var(--aside-item-active);
+                            }
                         }
                     }
                 }

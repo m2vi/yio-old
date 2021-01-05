@@ -1,0 +1,32 @@
+:root {
+  --main-color: rgb(69, 202, 255);
+  --main-color-deeper: rgba(0, 170, 238, 1);
+  --main-color-deep: #187094;
+  --main-color-dark: #1C6785;
+  --secondary-color: #66c37c;
+  --font: #323232;
+  --font-dark: #666;
+  --background: #fff;
+  --aside-background: #fff;
+  --aside-border: #efefef;
+  --aside-item-active: #efefef;
+  --aside-accordion-button: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-color: #d94f70;
+    --main-color-deeper: #a02f4b;
+    --main-color-deep: #a01d42;
+    --main-color-dark: #8b0b32;
+    --secondary-color: #d94f70;
+    --font: #fff;
+    --font-dark: #ccc;
+    --background: #282828;
+    --aside-background: #191919;
+    --aside-border: var(--background);
+    --aside-item-active: rgba(0, 0, 0, 0.2);
+    --aside-accordion-button: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+  }
+}
+/*# sourceMappingURL=var.css.map */

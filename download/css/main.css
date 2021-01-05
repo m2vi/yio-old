@@ -32,7 +32,7 @@ body.show-sidebar:before {
 }
 
 body.show-sidebar:not(.touch) {
-  padding-right: 17px;
+  padding-right: var(--navbar-width);
 }
 
 .navbar {
@@ -206,7 +206,7 @@ aside .side-inner .details .app-name {
 aside .side-inner .details .credits {
   font-size: 14px;
   font-style: italic;
-  color: #cfcfcf;
+  color: var(--font-dark);
 }
 
 aside .side-inner .details .btn {
@@ -270,6 +270,9 @@ aside .side-inner .nav-menu ul.language {
 aside .side-inner .nav-menu ul.language .accordion-button {
   background-color: var(--aside-background);
   border-radius: 0;
+  border-color: var(--aside-border);
+  border-right: 0;
+  border-left: 0;
   color: #8b8b8b;
 }
 
@@ -282,8 +285,11 @@ aside .side-inner .nav-menu ul.language .accordion-button:not(.collapsed):after 
   background-image: var(--aside-accordion-button);
 }
 
+aside .side-inner .nav-menu ul.language .accordion-button:after {
+  background-image: var(--aside-accordion-button);
+}
+
 aside .side-inner .nav-menu ul.language .accordion-button:focus {
-  border-color: rgba(0, 0, 0, 0.125);
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -293,13 +299,16 @@ aside .side-inner .nav-menu ul.language .accordion-body {
 }
 
 aside .side-inner .nav-menu ul.language .accordion-body ul {
-  padding-top: .75rem;
-  padding-bottom: .75rem;
   background-color: var(--aside-background);
 }
 
+aside .side-inner .nav-menu ul.language .accordion-body ul li a {
+  padding: 15px 30px;
+}
+
 aside .side-inner .nav-menu ul.language .accordion-body ul li.selected a {
-  color: var(--aside-background);
+  color: var(--main-color);
+  background-color: var(--aside-item-active);
 }
 
 aside .sl-flag {

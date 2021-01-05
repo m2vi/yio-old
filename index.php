@@ -18,6 +18,24 @@ $OS_round_old = $OS_round;
    <link rel="stylesheet" href="http://localhost/lib/aos-master/aos.css">
    <link rel="stylesheet" href="http://localhost/lib/bootstrap-5.0.0-beta1/dist/css/bootstrap.css">
    <link rel=" stylesheet" href="./css/index.min.css">
+
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="./image/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+   <link rel="apple-touch-icon" sizes="57x57" href="./image/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="./image/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="./image/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="./image/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="./image/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="./image/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="./image/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="./image/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="./image/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="./image/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="./image/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="./image/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="./image/favicon/favicon-16x16.png">
+   <link rel="manifest" href="./image/favicon/manifest.json">
 </head>
 
 <body>
@@ -92,7 +110,7 @@ $OS_round_old = $OS_round;
                      <path fill-rule="evenodd" d="M2.5 11.5A.5.5 0 0 1 3 11h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 7h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4A.5.5 0 0 1 3 3h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z" />
                   </svg>
                </a>
-               <a href="javascript:void(0)" class="logo">M2Z</a>
+               <!-- <a href="javascript:void(0)" class="logo">M2Z</a> -->
                <a href="http://localhost/.apps/yio/download/" class="btn btn-secondary get"><?php echo $nav->btn ?></a>
             </div>
          </div>
@@ -106,7 +124,7 @@ $OS_round_old = $OS_round;
                   <a href="./more/" class="btn btn-white learn"><?php echo $header->btn->learn ?> &#10230;</a>
                </div>
             </div>
-            <div class="col-xl-5 col-12">
+            <div class="col-xl-5 col-12 image-show">
                <div class="image-wrapper" data-aos="fade-up-left" data-aos-delay="350">
                   <img src="./image/header/header-image.png" alt="..." class="grey">
                   <img src="./image/header/header-image.png" alt="...">
@@ -174,11 +192,9 @@ $OS_round_old = $OS_round;
             </div>
             <a class="carousel-control-prev carousel-control" href="#reviews" role="button" data-bs-slide="prev">
                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Previous</span>
             </a>
             <a class="carousel-control-next carousel-control" href="#reviews" role="button" data-bs-slide="next">
                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-               <span class="visually-hidden">Next</span>
             </a>
          </div>
       </div>
@@ -204,6 +220,6 @@ $OS_round_old = $OS_round;
 
             Coded by m2v
 
-            Zero can code, but he is a waste of time
+            Zero can code, but not good and not fast
 
     ~~~~~~~~~~~~~~~~~~-->

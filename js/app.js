@@ -10,6 +10,7 @@ $(document).ready(function () {
     $("body").addClass("touch");
   }
   MarkSelectedLanguage();
+  $("body").css("--navbar-width", getScrollbarWidth() + "px");
 });
 
 $(".menu-toggle").click(function (e) {
