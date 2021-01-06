@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
-@import url("../../../lib/fonts/Gordita/Gordita.css");
+@import url("http://localhost/lib/fonts/Gordita/Gordita.css");
 :root {
   --main-color: rgb(69, 202, 255);
   --main-color-deeper: rgba(0, 170, 238, 1);
@@ -31,6 +31,77 @@
     --aside-item-active: rgba(0, 0, 0, 0.2);
     --aside-accordion-button: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23666'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
   }
+}
+
+body {
+  font-family: 'Gordita', sans-serif;
+  color: var(--font);
+  background-color: var(--background);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-white,
+.btn-dark {
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  font-family: 'Gordita', sans-serif;
+  font-weight: 500;
+  border-radius: 3px;
+  padding: 7px 18px;
+  border: none;
+}
+
+.btn-primary:focus,
+.btn-secondary:focus,
+.btn-white:focus,
+.btn-dark:focus {
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--main-color);
+  color: #fff;
+  border: 2px solid var(--main-color);
+}
+
+.btn-primary:hover {
+  background-color: #fff;
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+.btn-primary:focus {
+  border: 2px solid var(--main-color);
+}
+
+.btn-secondary {
+  background-color: var(--secondary-color);
+  color: #fff;
+}
+
+.btn-secondary:hover {
+  color: var(--secondary-color);
+  background-color: #fff;
+}
+
+.btn-white {
+  background-color: #fff;
+}
+
+.btn-white:hover {
+  background-color: #e2cfcf;
+}
+
+.btn-dark {
+  background-color: #191919;
+  color: #fff;
+}
+
+.btn-dark:hover {
+  background-color: #3c3e41;
 }
 
 @font-face {
@@ -431,66 +502,6 @@ aside .flag-en {
 
 .container-fluid footer .social a:hover {
   color: var(--secondary-color);
-}
-
-body {
-  font-family: 'Gordita', sans-serif;
-  color: var(--font);
-  background-color: var(--background);
-}
-
-.btn-primary,
-.btn-secondary,
-.btn-white {
-  -webkit-transition: 0.3s ease-in-out;
-  transition: 0.3s ease-in-out;
-  font-family: 'Gordita', sans-serif;
-  font-weight: 500;
-  border-radius: 3px;
-  padding: 7px 18px;
-  border: none;
-}
-
-.btn-primary:focus,
-.btn-secondary:focus,
-.btn-white:focus {
-  border: none;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.btn-primary {
-  background-color: var(--main-color);
-  color: #fff;
-  border: 2px solid var(--main-color);
-}
-
-.btn-primary:hover {
-  background-color: #fff;
-  color: var(--main-color);
-  border-color: var(--main-color);
-}
-
-.btn-primary:focus {
-  border: 2px solid var(--main-color);
-}
-
-.btn-secondary {
-  background-color: var(--secondary-color);
-  color: #fff;
-}
-
-.btn-secondary:hover {
-  color: var(--secondary-color);
-  background-color: #fff;
-}
-
-.btn-white {
-  background-color: #fff;
-}
-
-.btn-white:hover {
-  background-color: #e2cfcf;
 }
 
 header {

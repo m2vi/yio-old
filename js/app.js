@@ -11,6 +11,7 @@ $(document).ready(function () {
   }
   MarkSelectedLanguage();
   $("body").css("--navbar-width", getScrollbarWidth() + "px");
+  user_agent();
 });
 
 $(".menu-toggle").click(function (e) {
@@ -115,4 +116,21 @@ function getScrollbarWidth() {
   outer.parentNode.removeChild(outer);
 
   return scrollbarWidth;
+}
+
+function user_agent() {
+  var request = new XMLHttpRequest();
+
+  request.open(
+    "GET",
+    "https://api.duckduckgo.com/?q=useragent&format=json",
+    true
+  );
+
+  request.onload = function () {
+    var data = JSON.parse(this.response);
+    window.agent = data["Answer"];
+  };
+
+  request.send();
 }

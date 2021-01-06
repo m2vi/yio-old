@@ -101,6 +101,7 @@ $OS_round_old = $OS_round;
          </div>
       </div>
    </aside>
+
    <header>
       <nav class="navbar-expand navbar">
          <div class="collapse navbar-collapse">
@@ -211,6 +212,9 @@ $OS_round_old = $OS_round;
    <script src="http://localhost/lib/bootstrap-5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
    <script src="http://localhost/lib/fontawesome-free-5.14.0-web/js/all.min.js"></script>
    <script src="./js/app.js"></script>
+   <script>
+      console.log('<?php echo $_SERVER['HTTP_USER_AGENT'] ?>');
+   </script>
 </body>
 
 </html>

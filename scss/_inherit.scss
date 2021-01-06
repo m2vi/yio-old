@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@import url('http://localhost/lib/fonts/Gordita/Gordita.css');
+
+//? Not supported devices: Microsoft Lumia 550, JioPhone 2
+// Who the fuck owns some shit like that
+
+body {
+    font-family: 'Gordita', sans-serif;
+    color: var(--font);
+    background-color: var(--background);
+}
+
+.btn-primary,
+.btn-secondary,
+.btn-white,
+.btn-dark {
+    transition: 0.3s ease-in-out;
+    font-family: 'Gordita',
+        sans-serif;
+    font-weight: 500;
+    border-radius: 3px;
+    padding: 7px 18px;
+    border: none;
+
+    &:focus {
+        border: none;
+        box-shadow: none;
+    }
+}
+
+.btn-primary {
+    background-color: var(--main-color);
+    color: #fff;
+    border: 2px solid var(--main-color);
+
+    &:hover {
+
+        background-color: #fff;
+        color: var(--main-color);
+        border-color: var(--main-color);
+    }
+
+    &:focus {
+        border: 2px solid var(--main-color);
+    }
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color);
+    color: #fff;
+
+    &:hover {
+        color: var(--secondary-color);
+        background-color: #fff;
+    }
+}
+
+.btn-white {
+    background-color: #fff;
+
+    &:hover {
+        background-color: rgb(226, 207, 207);
+    }
+}
+
+.btn-dark {
+    background-color: #191919;
+    color: #fff;
+
+    &:hover {
+        background-color: #3c3e41;
+    }
+}

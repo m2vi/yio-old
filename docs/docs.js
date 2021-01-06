@@ -8,6 +8,16 @@ $(document).ready(function () {
     }
   );
   preload.stop(250);
+  if ("ontouchstart" in window == true) {
+    $(".carousel-control").addClass("touch");
+    $("body").addClass("touch");
+  }
+  $("body").css("--navbar-width", getScrollbarWidth() + "px");
+  AOS.init({
+    delay: 50, // values from 0 to 3000, with step 50ms
+    duration: 1000, // values from 0 to 3000, with step 50ms
+    easing: "ease", // default easing for AOS animations
+  });
 });
 
 var pf = navigator.platform;
@@ -23,11 +33,6 @@ var ios = [
   "Pike v7.6 release 92",
   "Pike v7.8 release 517",
 ];
-
-$("body").scrollspy({
-  target: ".nav",
-  offset: 50,
-});
 
 // When Documents fully loaded
 $(document).ready(function () {
@@ -97,3 +102,82 @@ $("body").attr("id", "top"),
           ));
       }
     });
+
+$(".menu-toggle").click(function (e) {
+  var $this = $(this);
+
+  if ($("body").hasClass("show-sidebar")) {
+    $("body").removeClass("show-sidebar");
+    $this.removeClass("active");
+  } else {
+    $("body").addClass("show-sidebar");
+    $this.addClass("active");
+  }
+
+  e.preventDefault();
+});
+
+// click outisde offcanvas
+$(document).mouseup(function (e) {
+  var container = $(".sidebar");
+  if (!container.is(e.target) && container.has(e.target).length === 0) {
+    if ($("body").hasClass("show-sidebar")) {
+      $("body").removeClass("show-sidebar");
+      $("body").find(".js-menu-toggle").removeClass("active");
+    }
+  }
+});
+
+function getScrollbarWidth() {
+  // Creating invisible container
+  const outer = document.createElement("div");
+  outer.style.visibility = "hidden";
+  outer.style.overflow = "scroll"; // forcing scrollbar to appear
+  outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
+  document.body.appendChild(outer);
+
+  // Creating inner element and placing it in the container
+  const inner = document.createElement("div");
+  outer.appendChild(inner);
+
+  // Calculating difference between container's full width and the child width
+  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
+
+  // Removing temporary elements from the DOM
+  outer.parentNode.removeChild(outer);
+
+  return scrollbarWidth;
+}
+
+//?   ******************
+//?   *     COOKIE     *
+//?   ******************
+
+// Create a Cookie
+// * Format: Cookiename, Content, Expire (in years and INT), type (checks if the cookie is for the language)
+function cCookie(n, c, e, t) {
+  // If e is undefined, set it to 1 year
+  if (e === undefined) e = 1;
+  // Get the Int in E
+  e = parseInt(e);
+  // Make Date
+  let CookieEx = new Date();
+  // Calculate date() + e
+  CookieEx.setFullYear(CookieEx.getFullYear() + e);
+  // Convert to UTC
+  CookieEx.toUTCString();
+  // If the cookie is for language
+  if (t == "l") {
+    // Create the Cookie
+    document.cookie = n + "=" + c + "; expires=" + CookieEx + "; path=/";
+  } else {
+    // Create the Cookie
+    document.cookie = n + "=" + c + "; expires=" + CookieEx + ";";
+  }
+  // Reload the Site
+  location.reload();
+}
+
+$(".lang").click(function () {
+  cCookie("lang", $(this).attr("language"), 1, "l");
+});
