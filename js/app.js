@@ -1,17 +1,16 @@
 $(document).ready(function () {
-  preload.stop(250);
-  AOS.init({
-    delay: 50, // values from 0 to 3000, with step 50ms
-    duration: 1000, // values from 0 to 3000, with step 50ms
-    easing: "ease", // default easing for AOS animations
+  yio.preload.stop(250, () => {
+    AOS.init({
+      delay: 50, // values from 0 to 3000, with step 50ms
+      duration: 1000, // values from 0 to 3000, with step 50ms
+      easing: "ease", // default easing for AOS animations
+    });
+    if (window.touch == true) {
+      $(".carousel-control").addClass("touch");
+      $("body").addClass("touch");
+    }
   });
-  if ("ontouchstart" in window == true) {
-    $(".carousel-control").addClass("touch");
-    $("body").addClass("touch");
-  }
   MarkSelectedLanguage();
-  $("body").css("--navbar-width", getScrollbarWidth() + "px");
-  user_agent();
 });
 
 $(".menu-toggle").click(function (e) {
@@ -39,42 +38,13 @@ $(document).mouseup(function (e) {
   }
 });
 
-//?   ******************
-//?   *     COOKIE     *
-//?   ******************
-
-// Create a Cookie
-// * Format: Cookiename, Content, Expire (in years and INT), type (checks if the cookie is for the language)
-function cCookie(n, c, e, t) {
-  // If e is undefined, set it to 1 year
-  if (e === undefined) e = 1;
-  // Get the Int in E
-  e = parseInt(e);
-  // Make Date
-  let CookieEx = new Date();
-  // Calculate date() + e
-  CookieEx.setFullYear(CookieEx.getFullYear() + e);
-  // Convert to UTC
-  CookieEx.toUTCString();
-  // If the cookie is for language
-  if (t == "l") {
-    // Create the Cookie
-    document.cookie = n + "=" + c + "; expires=" + CookieEx + "; path=/";
-  } else {
-    // Create the Cookie
-    document.cookie = n + "=" + c + "; expires=" + CookieEx + ";";
-  }
-  // Reload the Site
-  location.reload();
-}
-
 $(".lang").click(function () {
-  cCookie("lang", $(this).attr("language"), 1, "l");
+  yio.cookie("lang", $(this).attr("language"), 1, "l");
 });
 
 // Change the Cookie Button with the Flags of the Country
 function MarkSelectedLanguage() {
-  switch (getCookie("lang")) {
+  switch (yio.cookie("lang")) {
     case "en":
       $("[language$='en']").addClass("selected");
       break;
@@ -82,55 +52,4 @@ function MarkSelectedLanguage() {
       $("[language$='de']").addClass("selected");
       break;
   }
-}
-
-// A get Cookie Function from ... Stackoverflow
-// I don't know how it does something
-function getCookie(p) {
-  var name = p + "=";
-  var allCookieArray = document.cookie.split(";");
-  for (var i = 0; i < allCookieArray.length; i++) {
-    var temp = allCookieArray[i].trim();
-    if (temp.indexOf(name) == 0)
-      return temp.substring(name.length, temp.length);
-  }
-  return null;
-}
-
-function getScrollbarWidth() {
-  // Creating invisible container
-  const outer = document.createElement("div");
-  outer.style.visibility = "hidden";
-  outer.style.overflow = "scroll"; // forcing scrollbar to appear
-  outer.style.msOverflowStyle = "scrollbar"; // needed for WinJS apps
-  document.body.appendChild(outer);
-
-  // Creating inner element and placing it in the container
-  const inner = document.createElement("div");
-  outer.appendChild(inner);
-
-  // Calculating difference between container's full width and the child width
-  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth;
-
-  // Removing temporary elements from the DOM
-  outer.parentNode.removeChild(outer);
-
-  return scrollbarWidth;
-}
-
-function user_agent() {
-  var request = new XMLHttpRequest();
-
-  request.open(
-    "GET",
-    "https://api.duckduckgo.com/?q=useragent&format=json",
-    true
-  );
-
-  request.onload = function () {
-    var data = JSON.parse(this.response);
-    window.agent = data["Answer"];
-  };
-
-  request.send();
 }

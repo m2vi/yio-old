@@ -35,7 +35,7 @@ $OS_round_old = $OS_round;
                 <h3 class="app-name"><?php echo $sidenav->details->appname ?></h3>
                 <span class="credits"><?php echo $sidenav->details->credits ?></span>
                 <br>
-                <a href="./download" class="btn btn-primary"><?php echo $sidenav->details->btn ?></a>
+                <a href="http://localhost/.apps/yio/download/" class="btn btn-primary"><?php echo $sidenav->details->btn ?></a>
             </div>
 
             <div class="nav-menu">

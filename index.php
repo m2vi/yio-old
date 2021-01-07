@@ -52,7 +52,7 @@ $OS_round_old = $OS_round;
             <h3 class="app-name"><?php echo $sidenav->details->appname ?></h3>
             <span class="credits"><?php echo $sidenav->details->credits ?></span>
             <br>
-            <a href="./download" class="btn btn-primary"><?php echo $sidenav->details->btn ?></a>
+            <a href="http://localhost/.apps/yio/download/" class="btn btn-primary"><?php echo $sidenav->details->btn ?></a>
          </div>
 
          <div class="nav-menu">
@@ -61,7 +61,7 @@ $OS_round_old = $OS_round;
                <li><a href="http://localhost/.apps/yio/more/"><?php echo $sidenav->menu->two ?></a></li>
                <li><a href="http://localhost/.apps/yio/docs/"><?php echo $sidenav->menu->three ?></a></li>
                <li><a href="http://localhost/.apps/yio/more/#faq"><?php echo $sidenav->menu->four ?></a></li>
-               <li><a href="http://localhost/contact"><?php echo $sidenav->menu->five ?></a></li>
+               <li><a href="http://localhost/contact/"><?php echo $sidenav->menu->five ?></a></li>
 
                <li class="pt-5"><a href="http://localhost/hub/"><?php echo $sidenav->menu->six ?></a></li>
                <li><a href="http://localhost/.apps/yio/admin/"><?php echo $sidenav->menu->seven ?></a></li>
@@ -211,10 +211,8 @@ $OS_round_old = $OS_round;
    <script src="http://localhost/lib/jqeury-3.5.1/jquery-3.5.1.min.js"></script>
    <script src="http://localhost/lib/bootstrap-5.0.0-beta1/dist/js/bootstrap.bundle.min.js"></script>
    <script src="http://localhost/lib/fontawesome-free-5.14.0-web/js/all.min.js"></script>
+   <script src="./js/yio.js"></script>
    <script src="./js/app.js"></script>
-   <script>
-      console.log('<?php echo $_SERVER['HTTP_USER_AGENT'] ?>');
-   </script>
 </body>
 
 </html>
